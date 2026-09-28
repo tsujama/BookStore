@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookStore</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-
+<body onload="renderBooks()">
+    <header>
+        <div>BookStore</div>
+    </header>
+    <main>
+        <section>
+            <div id="books_wrapper">
+            </div>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/34f6182fea.js" crossorigin="anonymous"></script>
     <script src="bookDatabase.js"></script>
+    <script src="bookTemplate.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

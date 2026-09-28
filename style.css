@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #04161d;
+    color: white;
+}
+
+header {
+    background-color: #071f27;
+}
+
+#books_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+}
+
+#book_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 95dvh;
+    gap: 36px;
+    background-color: #0b313f;
+    padding: 48px 24px 48px 24px; 
+    border-radius: 16px;
+}
+
+#book_img {
+    width: 100%;
+    height: 150px;
+    padding: 16px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#book_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.book_price_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: #e04646;
+    font-weight: 900;
+}
+
+.book_likes_count_button {
+    display: flex;
+    gap: 8px;
+}
+
+.input_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+
