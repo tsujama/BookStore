@@ -28,7 +28,7 @@ header {
     height: 95dvh;
     gap: 36px;
     background-color: #0b313f;
-    padding: 48px 24px 48px 24px; 
+    padding: 24px; 
     border-radius: 16px;
 }
 
@@ -67,4 +67,6 @@ header {
     margin-top: 8px;
 }
 
-
+.book_comment_wrapper {
+    overflow-x: scroll;
+}

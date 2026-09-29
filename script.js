@@ -1,17 +1,17 @@
 let bookDiv = document.getElementById("books_wrapper");
-let bookCommentDiv = document.getElementById("book_comment_wrapper");
+
 
 function renderBooks() {
     console.log(books.length);
     console.log(books[0].name)
     for (let i = 0; i < books.length; i++) {
-        bookDiv.innerHTML+= getBookTemplate(i); 
+        bookDiv.innerHTML+= getBookTemplate(i);
+        
+        let bookComment = document.getElementById("comment_table"+i);
 
         for (let j = 0; j < books[i].comments.length; j++) {
-            bookCommentDiv.innerHTML += getCommentTemplate(j);
+            bookComment.innerHTML += getCommentTemplate(i, j);
         }
-
-        renderComments();
     }
 }
 
@@ -24,9 +24,9 @@ function checkIfLiked(i) {
     }
 }
 
-function renderComments() {
+/* function renderComments() {
     console.log(books[0].comments)
     console.log(books[0].comments.length)
     console.log(books[0].comments[0].name)
     console.log(books[0].comments[0].comment)
-}
+} */

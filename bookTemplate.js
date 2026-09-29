@@ -32,37 +32,26 @@ function getBookTemplate(i) {
                             </table>
                         </div>
                     </div>
-                    <div id="book_comment_wrapper">
-                        
-                        <div class="input_wrapper">
-                            <input id="input_comment" type="text">
-                            <button><i class="fa-regular fa-paper-plane"></i></button>
+                    <div class="book_comment_wrapper">
+                        <div class="book_comments_table">
+                            <table id="comment_table${i}">
+                                
+                            </table>
                         </div>
                     </div>   
+                    <div class="input_wrapper">
+                        <input id="input_comment" type="text">
+                        <button><i class="fa-regular fa-paper-plane"></i></button>
+                    </div>
         </div>            
     `;
 }
 
-function getCommentTemplate(j) {
+function getCommentTemplate(i, j) {
     return `
-        <div id="book_comments_table">
-            <table>
-                <tr>
-                    <td>Kommentare:</td>
-                </tr>
-                <tr>
-                    <td>[User 1]</td>
-                    <td>: Kommentar 1</td>
-                </tr>
-                <tr>
-                    <td>[User 2]</td>
-                    <td>: Kommentar 2</td>
-                </tr>
-                <tr>
-                    <td>[User 3]</td>
-                    <td>: Kommentar 3</td>
-                </tr>
-            </table>
-        </div>
+        <tr>
+            <td>${books[i].comments[j].name}</td>
+            <td>:${books[i].comments[j].comment}</td>
+        </tr>
     `;
 }
