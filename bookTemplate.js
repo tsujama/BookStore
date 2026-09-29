@@ -1,4 +1,4 @@
-function getBookTemplate(i) {
+function getBookTemplate(i, j) {
     return `
         <div id="book_wrapper">
             <div id="book_title">
@@ -40,8 +40,8 @@ function getBookTemplate(i) {
                         </div>
                     </div>   
                     <div class="input_wrapper">
-                        <input id="input_comment" type="text">
-                        <button><i class="fa-regular fa-paper-plane"></i></button>
+                        <input id="input_comment${i}" type="text">
+                        <button onclick="addComment(${i})"><i class="fa-regular fa-paper-plane"></i></button>
                     </div>
         </div>            
     `;

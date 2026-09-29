@@ -1,7 +1,7 @@
 let bookDiv = document.getElementById("books_wrapper");
 
-
 function renderBooks() {
+    bookDiv.innerHTML = "";
     console.log(books.length);
     console.log(books[0].name)
     for (let i = 0; i < books.length; i++) {
@@ -24,9 +24,16 @@ function checkIfLiked(i) {
     }
 }
 
-/* function renderComments() {
-    console.log(books[0].comments)
-    console.log(books[0].comments.length)
-    console.log(books[0].comments[0].name)
-    console.log(books[0].comments[0].comment)
-} */
+function addComment(i) {
+    let inputCommentRef = document.getElementById("input_comment"+i).value;
+    let newCommentUser = "User"+ Math.floor(Math.random() * 100);
+
+    books[i].comments.push({
+        name: newCommentUser,
+        comment: inputCommentRef
+    });
+
+    renderBooks();
+
+    inputCommentRef = "";
+}
