@@ -2,8 +2,6 @@ let bookDiv = document.getElementById("books_wrapper");
 
 function renderBooks() {
     bookDiv.innerHTML = "";
-    console.log(books.length);
-    console.log(books[0].name)
     for (let i = 0; i < books.length; i++) {
         bookDiv.innerHTML+= getBookTemplate(i);
         
@@ -28,12 +26,31 @@ function addComment(i) {
     let inputCommentRef = document.getElementById("input_comment"+i).value;
     let newCommentUser = "User"+ Math.floor(Math.random() * 100);
 
-    books[i].comments.push({
-        name: newCommentUser,
-        comment: inputCommentRef
-    });
+    if(inputCommentRef != "") {
+        books[i].comments.push({
+            name: newCommentUser,
+            comment: inputCommentRef
+        });
 
+        renderBooks();
+
+        inputCommentRef = "";
+    }
+}
+
+function toggleLike(i) {
+
+    let toggleButton = document.getElementById("book_likes_button"+i);
+    let booksLikes = document.getElementById("book_likes"+i);
+
+    if(books[i].liked) {
+        toggleButton.innerHTML=`<i class="fa-regular fa-heart"></i>`;
+        books[i].likes = books[i].likes - 1;
+        books[i].liked = false;
+    } else {
+        toggleButton.innerHTML=`<i class="fa-solid fa-heart"></i>`;
+        books[i].likes = books[i].likes + 1;
+        books[i].liked = true;
+    }
     renderBooks();
-
-    inputCommentRef = "";
 }

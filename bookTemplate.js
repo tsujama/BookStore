@@ -11,8 +11,8 @@ function getBookTemplate(i, j) {
                         <div class="book_price_wrapper">
                             <div id="book_price">${books[i].price}</div>
                             <div class="book_likes_count_button">
-                                <div id="book_likes">${books[i].likes}</div>
-                                <div class="book_likes_button${i}">${checkIfLiked(i)}</div>
+                                <div id="book_likes${i}">${books[i].likes}</div>
+                                <div onclick="toggleLike(${i})" id="book_likes_button${i}">${checkIfLiked(i)}</div>
                             </div>
                         </div>
                         <div class="book_infos_table">
@@ -44,14 +44,5 @@ function getBookTemplate(i, j) {
                         <button onclick="addComment(${i})"><i class="fa-regular fa-paper-plane"></i></button>
                     </div>
         </div>            
-    `;
-}
-
-function getCommentTemplate(i, j) {
-    return `
-        <tr>
-            <td>${books[i].comments[j].name}</td>
-            <td>:${books[i].comments[j].comment}</td>
-        </tr>
     `;
 }

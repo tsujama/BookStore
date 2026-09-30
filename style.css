@@ -70,3 +70,21 @@ header {
 .book_comment_wrapper {
     overflow-x: scroll;
 }
+
+@media screen and (min-width: 768px) {
+
+    section {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #book_wrapper  {
+    width: 30%;
+    height: 50rem;
+
+    }
+
+    .book_comment_wrapper {
+    overflow-x: unset;
+    }
+}
